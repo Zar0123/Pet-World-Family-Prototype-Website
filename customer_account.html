@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- fontawesome icons link -->
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              data-wishlist-count>0</span>
+          </a>
+          <div class="d-flex align-items-center" id="navAuthArea"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- HERO -->
+  <section class="account-hero">
+    <div class="container">
+      <div class="account-hero-content">
+        <p class="account-kicker">My Account</p>
+        <h1>Manage your profile and pet information</h1>
+        <p>Keep your personal details, pet information, bookings, and order history in one clean account page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOUNT -->
+  <section class="account-section">
+    <div class="account-container">
+      <div class="account-grid">
+        <!-- LEFT -->
+        <aside class="account-sidebar">
+          <div class="account-card profile-card">
+            <div class="profile-avatar-wrap">
+              <img id="profilePreview" class="profile-avatar-img" src="" alt="Profile photo" />
+              <div id="profileAvatarFallback" class="profile-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+
+            <input type="file" id="profileImageInput" accept="image/*" hidden
+              onchange="handleProfileImageUpload(event)" />
+
+            <button type="button" class="btn profile-photo-btn w-100 mb-3"
+              onclick="document.getElementById('profileImageInput').click()">
+              Upload Photo
+            </button>
+
+            <div class="profile-main-info">
+              <div class="profile-name" id="profileName">Customer Name</div>
+              <div class="profile-email" id="profileEmail">customer@email.com</div>
+              <div class="profile-phone" id="profilePhone">No phone added</div>
+            </div>
+
+            <div class="profile-meta">
+              <span id="memberSinceText">Member since –</span>
+            </div>
+
+            <button type="button" class="btn profile-logout-btn w-100" onclick="logoutUser()">
+              Logout
+            </button>
+          </div>
+
+          <nav class="account-nav">
+            <button onclick="showSection('profileSection', this)" class="account-nav-btn active">
+              <i class="fa-solid fa-user-pen"></i> My details
+            </button>
+            <button onclick="showSection('donationSection', this)" class="account-nav-btn">
+              <i class="fa-solid fa-hand-holding-heart"></i> Donations
+            </button>
+            <button onclick="showSection('petsSection', this)" class="account-nav-btn">
+              <i class="fa-solid fa-paw"></i> My pets
+            </button>
+            <button onclick="showSection('bookingSection', this)" class="account-nav-btn">
+              <i class="fa-solid fa-calendar-check"></i> Bookings
+            </button>
+            <button onclick="showSection('orderSection', this)" class="account-nav-btn">
+              <i class="fa-solid fa-box-open"></i> Orders
+            </button>
+
+          </nav>
+        </aside>
+
+        <!-- RIGHT -->
+        <div class="account-main">
+          <!-- profile -->
+          <div id="profileSection" class="account-content-section">
+            <div class="account-card">
+              <h5 class="account-section-title">Account details</h5>
+              <p class="account-section-subtitle">Update the main information used for orders and bookings.</p>
+
+              <form class="profile-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="editName">Full name</label>
+                    <input type="text" id="editName" class="form-control" placeholder="Full name" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="editEmail">Email</label>
+                    <input type="email" id="editEmail" class="form-control" placeholder="Email address" required
+                      title="Please enter a valid email address" />
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6">
+                    <label class="form-label" for="editPhone">Phone number</label>
+                    <input type="tel" id="editPhone" class="form-control" placeholder="Phone number" required
+                      pattern="[0-9+\-\s()]{7,20}" title="Enter a phone number using digits, spaces, +, - or ()" />
+
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="editAddress">Address</label>
+                    <input type="text" id="editAddress" class="form-control" placeholder="Delivery address" required
+                      minlength="5" title="Enter a valid delivery address" />
+                  </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <button type="button" class="btn profile-edit-btn" onclick="enableProfileEdit()" id="editProfileBtn">
+                    Edit
+                  </button>
+                  <button type="button" class="btn profile-save-btn" onclick="saveProfile()" id="updateProfileBtn"
+                    style="display:none;">
+                    Save changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- donations -->
+          <div id="donationSection" class="account-content-section" style="display:none;">
+            <div class="account-card">
+              <h5 class="account-section-title">Donation history</h5>
+              <p class="account-section-subtitle">Review your past support for pets in need.</p>
+              <div id="donationHistoryList">
+                <div class="empty-state-text">No donations yet.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- pets -->
+          <div id="petsSection" class="account-content-section" style="display:none;">
+            <div class="account-card">
+              <h5 class="account-section-title">My pets</h5>
+              <p class="account-section-subtitle">
+                Add simple pet details that may help with future bookings and pet care needs.
+              </p>
+
+              <form class="pet-form mb-3">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <label class="form-label" for="petNameInput">Pet name</label>
+                    <input type="text" id="petNameInput" class="form-control" placeholder="e.g. Lucy" />
+                  </div>
+
+                  <div class="col-md-3">
+                    <label class="form-label" for="petTypeInput">Pet type</label>
+                    <input type="text" id="petTypeInput" class="form-control" placeholder="Dog, Cat, Bird..." />
+                  </div>
+
+                  <div class="col-md-3">
+                    <label class="form-label" for="petAgeInput">Age</label>
+                    <input type="text" id="petAgeInput" class="form-control" placeholder="e.g. 3 years" />
+                  </div>
+
+                  <div class="col-md-3">
+                    <label class="form-label" for="petHealthInput">Health notes</label>
+                    <input type="text" id="petHealthInput" class="form-control"
+                      placeholder="Vaccinated, allergies, medication" />
+                  </div>
+                </div>
+
+                <div class="row g-3 mt-1">
+                  <div class="col-12">
+                    <label class="form-label" for="petNotesInput">Behaviour / extra notes</label>
+                    <input type="text" id="petNotesInput" class="form-control"
+                      placeholder="Sensitive skin, anxious at vet, friendly with kids..." />
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <button type="button" class="btn pet-add-btn" onclick="addPet()">Add pet</button>
+                </div>
+              </form>
+
+              <div id="petList">
+                <div class="empty-state-text">No pets added yet.</div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- bookings -->
+          <div id="bookingSection" class="account-content-section" style="display:none;">
+            <div class="account-card">
+              <h5 class="account-section-title">Booking history</h5>
+              <p class="account-section-subtitle">Review and manage your pet service bookings.</p>
+              <div id="bookingList">
+                <div class="empty-state-text">No bookings yet.</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- orders -->
+          <div id="orderSection" class="account-content-section" style="display:none;">
+            <div class="account-card">
+              <h5 class="account-section-title">Order history</h5>
+              <p class="account-section-subtitle">Track previous purchases and order status.</p>
+              <div id="orderList">
+                <div class="empty-state-text">No orders yet.</div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+  <script src="auth.js"></script>
+  <script src="wishlist.js"></script>
+
+  <script>
+    let currentUser = null;
+
+    function canCancelBooking(createdAt) {
+      if (!createdAt) return false;
+      const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+      return (Date.now() - createdAt) <= TWENTY_FOUR_HOURS;
+    }
+
+    function canCancelOrder(createdAt) {
+      if (!createdAt) return false;
+      const TWENTY_FOUR_HOURS = 24 * 60 * 60 * 1000;
+      return (Date.now() - createdAt) <= TWENTY_FOUR_HOURS;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!requireLogin()) return;
+
+      currentUser = getCurrentUser();
+
+      renderNavbarAuth();
+      loadProfile();
+      renderPets();
+      renderBookings();
+      renderOrders();
+      renderDonations();
+    });
+
+    function updateCurrentUserInStorage(updatedUser, oldEmail = null) {
+      const users = getUsers();
+      const targetEmail = oldEmail || updatedUser.email;
+      const userIndex = users.findIndex(user => user.email === targetEmail);
+
+      if (userIndex === -1) {
+        alert("User account not found.");
+        return false;
+      }
+
+      users[userIndex] = {
+        ...users[userIndex],
+        ...updatedUser
+      };
+
+      saveUsers(users);
+      currentUser = users[userIndex];
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      return true;
+    }
+
+    function updateProfileImage() {
+      const preview = document.getElementById("profilePreview");
+      const fallback = document.getElementById("profileAvatarFallback");
+
+      if (currentUser && currentUser.profileImage) {
+        preview.src = currentUser.profileImage;
+        preview.style.display = "block";
+        fallback.style.display = "none";
+      } else {
+        preview.src = "";
+        preview.style.display = "none";
+        fallback.style.display = "flex";
+      }
+    }
+
+    function handleProfileImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("Please upload a valid image file.");
+        return;
+      }
+
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Please upload an image smaller than 2MB.");
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const updatedUser = {
+          ...currentUser,
+          profileImage: e.target.result
+        };
+
+        const saved = updateCurrentUserInStorage(updatedUser);
+        if (!saved) return;
+
+        updateProfileImage();
+        renderNavbarAuth();
+        alert("Profile photo updated successfully.");
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    function loadProfile() {
+      document.getElementById("editName").disabled = true;
+      document.getElementById("editEmail").disabled = true;
+      document.getElementById("editPhone").disabled = true;
+      document.getElementById("editAddress").disabled = true;
+
+      document.getElementById("editProfileBtn").style.display = "inline-block";
+      document.getElementById("updateProfileBtn").style.display = "none";
+
+      document.getElementById("profileName").textContent = currentUser.name || "Customer Name";
+      document.getElementById("profileEmail").textContent = currentUser.email || "customer@email.com";
+      document.getElementById("profilePhone").textContent = currentUser.phone || "No phone added";
+
+      document.getElementById("editName").value = currentUser.name || "";
+      document.getElementById("editEmail").value = currentUser.email || "";
+      document.getElementById("editPhone").value = currentUser.phone || "";
+      document.getElementById("editAddress").value = currentUser.address || "";
+
+      const memberSince = currentUser.memberSince || "";
+      document.getElementById("memberSinceText").textContent =
+        memberSince ? `Member since ${memberSince}` : "Member since –";
+
+      updateProfileImage();
+    }
+
+    function enableProfileEdit() {
+      document.getElementById("editName").disabled = false;
+      document.getElementById("editEmail").disabled = false;
+      document.getElementById("editPhone").disabled = false;
+      document.getElementById("editAddress").disabled = false;
+
+      document.getElementById("editProfileBtn").style.display = "none";
+      document.getElementById("updateProfileBtn").style.display = "inline-block";
+    }
+
+    function saveProfile() {
+  const oldEmail = currentUser.email;
+
+  const nameEl = document.getElementById("editName");
+  const emailEl = document.getElementById("editEmail");
+  const phoneEl = document.getElementById("editPhone");
+  const addressEl = document.getElementById("editAddress");
+
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim().toLowerCase();
+  const phone = phoneEl.value.trim();
+  const address = addressEl.value.trim();
+
+  if (!name || !email) {
+    alert("Name and email are required.");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
+    emailEl.focus();
+    return;
+  }
+
+  const phonePattern = /^[0-9+\-\s()]{7,20}$/;
+  if (phone && !phonePattern.test(phone)) {
+    alert("Please enter a valid phone number using digits, spaces, +, - or ().");
+    phoneEl.focus();
+    return;
+  }
+
+  const addressPattern = /^(?=.*[A-Za-z])(?=.*\d).{5,}$/;
+  if (address && !addressPattern.test(address)) {
+    alert("Please enter a more complete address (include street and number).");
+    addressEl.focus();
+    return;
+  }
+
+  const updatedUser = {
+    ...currentUser,
+    name,
+    email,
+    phone,
+    address,
+    memberSince: currentUser.memberSince || new Date().toLocaleDateString(),
+    profileImage: currentUser.profileImage || ""
+  };
+
+  const users = getUsers();
+  const emailTakenByAnotherUser = users.some(
+    user => user.email === updatedUser.email && user.email !== oldEmail
+  );
+
+  if (emailTakenByAnotherUser) {
+    alert("That email is already being used by another account.");
+    return;
+  }
+
+  const saved = updateCurrentUserInStorage(updatedUser, oldEmail);
+  if (!saved) return;
+
+  loadProfile();
+  renderNavbarAuth();
+  alert("Profile updated successfully.");
+}
+    function renderPets() {
+      const petList = document.getElementById("petList");
+      const allPets = JSON.parse(localStorage.getItem("pets")) || [];
+      const myPets = allPets.filter(p => p.userEmail === currentUser.email);
+
+      if (myPets.length === 0) {
+        petList.innerHTML = '<div class="empty-state-text">No pets added yet.</div>';
+        return;
+      }
+
+      petList.innerHTML = "";
+      myPets.forEach((pet, index) => {
+        const ageText = pet.age ? `<strong>Age:</strong> ${pet.age}<br>` : "";
+        const healthText = pet.health ? `<strong>Health:</strong> ${pet.health}<br>` : "";
+
+        petList.innerHTML += `
+      <div class="history-item pet-item">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <strong>${pet.name}</strong>
+            <span class="pet-type-tag">${pet.type || "Pet"}</span><br>
+            ${ageText}
+            ${healthText}
+            <strong>Notes:</strong> <span class="pet-notes">${pet.notes || "-"}</span>
+          </div>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm rounded-5"
+            onclick="removePet(${index})"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    `;
+      });
+    }
+    function addPet() {
+      const name = document.getElementById("petNameInput").value.trim();
+      const type = document.getElementById("petTypeInput").value.trim();
+      const age = document.getElementById("petAgeInput").value.trim();
+      const health = document.getElementById("petHealthInput").value.trim();
+      const notes = document.getElementById("petNotesInput").value.trim();
+
+      if (!name) {
+        alert("Please enter at least a pet name.");
+        return;
+      }
+
+      const allPets = JSON.parse(localStorage.getItem("pets")) || [];
+      allPets.push({
+        userEmail: currentUser.email,
+        name,
+        type,
+        age,
+        health,
+        notes
+      });
+
+      localStorage.setItem("pets", JSON.stringify(allPets));
+
+      document.getElementById("petNameInput").value = "";
+      document.getElementById("petTypeInput").value = "";
+      document.getElementById("petAgeInput").value = "";
+      document.getElementById("petHealthInput").value = "";
+      document.getElementById("petNotesInput").value = "";
+
+      renderPets();
+    }
+
+    function removePet(index) {
+      const confirmDelete = confirm("Remove this pet from your profile?");
+      if (!confirmDelete) return;
+
+      let allPets = JSON.parse(localStorage.getItem("pets")) || [];
+      const myPets = allPets.filter(p => p.userEmail === currentUser.email);
+      const petToRemove = myPets[index];
+
+      allPets = allPets.filter(
+        p => !(
+          p.userEmail === petToRemove.userEmail &&
+          p.name === petToRemove.name &&
+          p.type === petToRemove.type &&
+          p.notes === petToRemove.notes
+        )
+      );
+
+      localStorage.setItem("pets", JSON.stringify(allPets));
+      renderPets();
+    }
+
+    function renderBookings() {
+      const bookingList = document.getElementById("bookingList");
+      const allBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      const myBookings = allBookings.filter(item => item.userEmail === currentUser.email);
+
+      if (myBookings.length === 0) {
+        bookingList.innerHTML = '<div class="empty-state-text">No bookings yet.</div>';
+        return;
+      }
+
+      bookingList.innerHTML = "";
+      myBookings.forEach((item, index) => {
+        const serviceText = item.service
+          ? item.service
+          : (item.services ? item.services.map(s => s.name).join(", ") : "");
+
+        const cancellable = canCancelBooking(item.createdAt);
+
+        bookingList.innerHTML += `
+        <div class="history-item">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <strong>Pet(s):</strong> ${item.petName}<br>
+              <strong>Total pets:</strong> ${item.totalPets}<br>
+              <strong>Service:</strong> ${serviceText}<br>
+              <strong>Date:</strong> ${item.date}<br>
+              <strong>Time:</strong> ${item.time}<br>
+              <strong>Notes:</strong> ${item.message || "-"}<br>
+              <strong>Created at:</strong> ${item.createdAt ? new Date(item.createdAt).toLocaleString() : "-"}
+            </div>
+            ${cancellable
+            ? `<button type="button"
+                          class="btn btn-outline-danger btn-sm rounded-5"
+                          onclick="cancelBooking(${index})">
+                       Cancel
+                   </button>`
+            : `<button type="button"
+                          class="btn btn-outline-secondary btn-sm rounded-5"
+                          disabled>
+                       Cannot cancel
+                   </button>`
+          }
+          </div>
+        </div>
+      `;
+      });
+    }
+
+    function cancelBooking(index) {
+      let allBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+      const myBookings = allBookings.filter(item => item.userEmail === currentUser.email);
+      const bookingToDelete = myBookings[index];
+
+      if (!bookingToDelete) {
+        alert("Booking not found.");
+        return;
+      }
+
+      if (!canCancelBooking(bookingToDelete.createdAt)) {
+        alert("You can no longer cancel this booking because more than 24 hours have passed.");
+        return;
+      }
+
+      const confirmDelete = confirm("Are you sure you want to cancel this booking?");
+      if (!confirmDelete) return;
+
+      allBookings = allBookings.filter(
+        item => !(
+          item.userEmail === bookingToDelete.userEmail &&
+          item.petName === bookingToDelete.petName &&
+          item.date === bookingToDelete.date &&
+          item.time === bookingToDelete.time &&
+          item.message === bookingToDelete.message
+        )
+      );
+
+      localStorage.setItem("bookings", JSON.stringify(allBookings));
+      renderBookings();
+      alert("Booking cancelled successfully.");
+    }
+
+    function renderOrders() {
+      const orderList = document.getElementById("orderList");
+      const allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+      const myOrders = allOrders.filter(item => item.userEmail === currentUser.email);
+
+      if (myOrders.length === 0) {
+        orderList.innerHTML = '<div class="empty-state-text">No orders yet.</div>';
+        return;
+      }
+
+      orderList.innerHTML = "";
+      myOrders.forEach((item, index) => {
+        const itemNames = item.items
+          .map(product => `${product.name} x${product.quantity}`)
+          .join(", ");
+
+        const isCancelled = item.status === "Cancelled";
+        const cancellable = !isCancelled && canCancelOrder(item.createdAt);
+
+        orderList.innerHTML += `
+      <div class="history-item">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <strong>Order ID:</strong> ${item.orderId}<br>
+            <strong>Items:</strong> ${itemNames}<br>
+            <strong>Total:</strong> $${item.total}<br>
+            <strong>Date:</strong> ${item.date}<br>
+            <strong>Status:</strong>
+            <span class="order-status ${isCancelled ? "status-cancelled" : "status-active"}">
+              ${item.status}
+            </span>
+          </div>
+          ${isCancelled
+            ? `<button type="button" class="btn btn-outline-secondary btn-sm rounded-5" disabled>Cancelled</button>`
+            : cancellable
+              ? `<button type="button" class="btn btn-outline-danger btn-sm rounded-5"
+                             onclick="cancelOrder(${index})">
+                       Cancel
+                     </button>`
+              : `<button type="button" class="btn btn-outline-secondary btn-sm rounded-5" disabled>
+                       Cannot cancel
+                     </button>`
+          }
+        </div>
+      </div>
+    `;
+      });
+    }
+    function cancelOrder(index) {
+      let allOrders = JSON.parse(localStorage.getItem("orders")) || [];
+      const myOrders = allOrders.filter(item => item.userEmail === currentUser.email);
+      const orderToCancel = myOrders[index];
+
+      if (!orderToCancel) {
+        alert("Order not found.");
+        return;
+      }
+
+      if (!canCancelOrder(orderToCancel.createdAt)) {
+        alert("You can no longer cancel this order because more than 24 hours have passed.");
+        return;
+      }
+
+      const confirmCancel = confirm("Are you sure you want to cancel this order?");
+      if (!confirmCancel) return;
+
+      allOrders = allOrders.map(item => {
+        if (item.orderId === orderToCancel.orderId) {
+          return { ...item, status: "Cancelled" };
+        }
+        return item;
+      });
+
+      localStorage.setItem("orders", JSON.stringify(allOrders));
+      renderOrders();
+      alert("Order cancelled successfully.");
+    }
+
+    function showSection(sectionId, button) {
+      const sections = document.querySelectorAll(".account-content-section");
+      const buttons = document.querySelectorAll(".account-nav-btn");
+
+      sections.forEach(section => {
+        section.style.display = "none";
+      });
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      document.getElementById(sectionId).style.display = "block";
+      if (button) button.classList.add("active");
+    }
+
+    function renderDonations() {
+      const donationList = document.getElementById("donationHistoryList");
+      const allDonations = JSON.parse(localStorage.getItem("donations")) || [];
+      const myDonations = allDonations.filter(item => item.userEmail === currentUser.email);
+
+      if (myDonations.length === 0) {
+        donationList.innerHTML = '<div class="empty-state-text">No donations yet.</div>';
+        return;
+      }
+
+      donationList.innerHTML = "";
+      myDonations.forEach(item => {
+        donationList.innerHTML += `
+        <div class="history-item">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <strong>Donation ID:</strong> ${item.donationId}<br>
+              <strong>Amount:</strong> $${item.amount}<br>
+              <strong>Type:</strong> ${item.frequency === "monthly" ? "Monthly" : "One-Time"}<br>
+              <strong>Purpose:</strong> ${item.purpose}<br>
+              <strong>Payment:</strong> ${item.paymentMethod}<br>
+              <strong>Date:</strong> ${item.donatedAt}<br>
+              <strong>Status:</strong>
+              <span class="order-status status-active">${item.status}</span><br>
+              <strong>Message:</strong> ${item.message ? item.message : "-"}
+            </div>
+          </div>
+        </div>
+      `;
+      });
+    }
+  </script>
+</body>
+
+</html>

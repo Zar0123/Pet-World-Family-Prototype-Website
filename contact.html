@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="pet_family_page.js"></script>
+  <!-- fontawesome icons link -->
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+         <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              data-wishlist-count>0</span>
+          </a>
+          <div class="d-flex align-items-center" id="navAuthArea"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="contact-hero-box">
+        <p class="contact-hero-label">Pet World Family</p>
+        <h1>Contact Us</h1>
+        <p class="contact-hero-text">
+          Have a question about grooming, products, bookings, or pet care? Our team is happy to help you and your pets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact details + form -->
+  <section class="contact-main-section py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Left: info -->
+        <div class="col-lg-5">
+          <div class="contact-card">
+            <h2 class="section-title mb-3">Get in Touch</h2>
+            <p class="contact-intro">
+              Reach out by email, phone, or the form, and we’ll reply as soon as we can during our opening hours.
+            </p>
+
+            <div class="contact-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h6 class="mb-1">Address</h6>
+                <p class="mb-0">Shanghai, China</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fa-solid fa-square-phone"></i>
+              <div>
+                <h6 class="mb-1">Phone</h6>
+                <p class="mb-0">+86 1234 5678 910</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <h6 class="mb-1">Email</h6>
+                <p class="mb-0">petworldfamily@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fa-solid fa-business-time"></i>
+              <div>
+                <h6 class="mb-1">Opening Hours</h6>
+                <p class="mb-0">Mon – Fri: 9:00 AM – 8:00 PM</p>
+                <p class="mb-0">Sat – Sun: 10:00 AM – 9:00 PM</p>
+              </div>
+            </div>
+
+            <h5 class="mt-4 mb-3">Follow Us</h5>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="col-lg-7">
+          <div class="form-card">
+            <h2 class="section-title mb-3">Send Us a Message</h2>
+            <p class="contact-intro mb-4">
+              Share a few details so we can understand your request and respond with helpful information.
+            </p>
+            <form id="contactForm" action="#" method="post">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Full Name *" name="name" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address *" name="email" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Phone Number (optional)" name="phoneNumber" />
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select" name="subject" required>
+                    <option value="" disabled selected>Select Subject *</option>
+                    <option>General Inquiry</option>
+                    <option>Grooming Service</option>
+                    <option>Booking / Appointment</option>
+                    <option>Product Question</option>
+                    <option>Delivery Support</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="6" placeholder="Write your message here..." name="message"
+                    required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn contact-submit-btn">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section pb-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Find Our Location</h2>
+      <p class="contact-intro text-center mb-4">
+        Visit our store for grooming, supplies, and in-person support.
+      </p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218360.19485023536!2d121.13284288671873!3d31.224108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b26560423fde3d%3A0xef35a433a56ba684!2sAimi%20Pet%20Shops!5e0!3m2!1sen!2ssg!4v1773896984702!5m2!1sen!2ssg"
+        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- footer (same as other pages) -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care
+            essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">
+          &copy; February 2014 Pet World Family. All rights reserved
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+ <script src="auth.js"></script>
+ <script src="wishlist.js"></script>
+<script>
+  function saveContactMessage(message) {
+    const messages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+    messages.push(message);
+    localStorage.setItem("contactMessages", JSON.stringify(messages));
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNavbarAuth();
+
+    const form = document.getElementById("contactForm");
+    const currentUser = getCurrentUser ? getCurrentUser() : null;
+
+    if (currentUser) {
+      form.querySelector('[name="name"]').value = currentUser.name || "";
+      form.querySelector('[name="email"]').value = currentUser.email || "";
+      form.querySelector('[name="phoneNumber"]').value = currentUser.phone || "";
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!requireLogin()) return;
+
+      const formData = new FormData(form);
+      const name = formData.get("name").trim();
+      const email = formData.get("email").trim();
+      const phoneNumber = formData.get("phoneNumber").trim();
+      const subject = formData.get("subject");
+      const message = formData.get("message").trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      const loggedInUser = getCurrentUser();
+      const contactMessage = {
+        id: "MSG" + Date.now(),
+        userEmail: loggedInUser.email,
+        name,
+        email,
+        phoneNumber,
+        subject,
+        message,
+        createdAt: new Date().toLocaleString()
+      };
+
+      saveContactMessage(contactMessage);
+
+      alert("Thank you! Your message has been sent.");
+      form.reset();
+    });
+  });
+</script>
+</body>
+
+</html>

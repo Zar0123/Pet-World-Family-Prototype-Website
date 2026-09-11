@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="booking-page">
+    <div class="container">
+      <div class="row min-vh-100 align-items-center justify-content-center g-4">
+        <!-- left panel -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="booking-info-panel">
+            <p class="booking-kicker">Pet World Family</p>
+            <h1>Book care for one or more pets</h1>
+            <p class="booking-info-text">
+              Choose one or more services, select your preferred visit time,
+              and send us the details we need to prepare for your pet’s booking.
+            </p>
+
+            <div class="booking-highlights">
+              <div class="booking-highlight-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Choose your preferred date and time slot</span>
+              </div>
+              <div class="booking-highlight-item">
+                <i class="fa-solid fa-paw"></i>
+                <span>Book for multiple pets in one request</span>
+              </div>
+              <div class="booking-highlight-item">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Select multiple services and view the estimated total</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- form -->
+        <div class="col-md-10 col-lg-7">
+          <div class="booking-form-card">
+            <div class="booking-form-inner">
+              <div class="text-center mb-4">
+                <div class="booking-brand-icon">
+                  <i class="fa-solid fa-paw"></i>
+                </div>
+                <h2 class="booking-title">Pet Booking Request</h2>
+                <p class="booking-subtitle mb-0">
+                  Complete the form below and we will contact you with confirmation.
+                </p>
+              </div>
+
+              <form class="booking-form" novalidate>
+                <!-- owner information -->
+                <div class="booking-section-heading">
+                  <p>Owner information</p>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="customerFirstName">First name</label>
+                    <input type="text" class="form-control" id="customerFirstName" placeholder="First name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="customerLastName">Last name</label>
+                    <input type="text" class="form-control" id="customerLastName" placeholder="Last name" required>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bookingPhone">Phone number</label>
+                    <input type="text" class="form-control" id="bookingPhone" placeholder="Mobile or WhatsApp" required>
+                  </div>
+                </div>
+
+                <!-- pet information -->
+                <div class="booking-section-heading mt-4">
+                  <p>Pet information</p>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-8">
+                    <label class="form-label" for="petName">Pet name(s)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="petName"
+                      placeholder="Example: Jucky, Lucy, Coco"
+                      required
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="totalPets">Total pets</label>
+                    <input type="number" class="form-control" id="totalPets" min="1" max="10" value="1" required>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="petDetails">Pet details</label>
+                  <textarea
+                    class="form-control"
+                    id="petDetails"
+                    rows="3"
+                    placeholder="Example: 2 dogs and 1 cat, small size, sensitive skin, nervous during grooming"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- services -->
+                <div class="booking-section-heading mt-4">
+                  <p>Choose services</p>
+                </div>
+
+                <div class="service-options-grid" id="serviceOptions">
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Grooming" data-price="35">
+                    <span class="service-card-title">Grooming</span>
+                    <span class="service-card-meta">Bath, brushing, basic clean</span>
+                    <span class="service-card-price">$35.00</span>
+                  </label>
+
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Daycare" data-price="25">
+                    <span class="service-card-title">Daycare</span>
+                    <span class="service-card-meta">Daily supervised care</span>
+                    <span class="service-card-price">$25.00</span>
+                  </label>
+
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Health Check" data-price="40">
+                    <span class="service-card-title">Health Check</span>
+                    <span class="service-card-meta">Basic wellness visit</span>
+                    <span class="service-card-price">$40.00</span>
+                  </label>
+
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Pet Training" data-price="50">
+                    <span class="service-card-title">Pet Training</span>
+                    <span class="service-card-meta">Starter behaviour support</span>
+                    <span class="service-card-price">$50.00</span>
+                  </label>
+
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Nail Trim" data-price="12">
+                    <span class="service-card-title">Nail Trim</span>
+                    <span class="service-card-meta">Quick add-on grooming care</span>
+                    <span class="service-card-price">$12.00</span>
+                  </label>
+
+                  <label class="service-card">
+                    <input type="checkbox" name="service" value="Ear Cleaning" data-price="10">
+                    <span class="service-card-title">Ear Cleaning</span>
+                    <span class="service-card-meta">Gentle ear hygiene support</span>
+                    <span class="service-card-price">$10.00</span>
+                  </label>
+                </div>
+
+                <!-- date and time -->
+                <div class="booking-section-heading mt-4">
+                  <p>Preferred schedule</p>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="bookingDate">Preferred date</label>
+                    <input type="date" class="form-control" id="bookingDate" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bookingTimeSlot">Preferred time slot</label>
+                    <select class="form-control" id="bookingTimeSlot" required>
+                      <option value="">Select a time slot</option>
+                      <option value="09:00 AM">09:00 AM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="01:00 PM">01:00 PM</option>
+                      <option value="02:00 PM">02:00 PM</option>
+                      <option value="03:00 PM">03:00 PM</option>
+                      <option value="04:00 PM">04:00 PM</option>
+                      <option value="05:00 PM">05:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- summary -->
+                <div class="booking-section-heading mt-4">
+                  <p>Booking summary</p>
+                </div>
+
+                <div class="booking-summary-box">
+                  <div class="summary-row">
+                    <span>Selected services</span>
+                    <strong id="summaryServices">None yet</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Total pets</span>
+                    <strong id="summaryPets">1</strong>
+                  </div>
+                  <div class="summary-row total">
+                    <span>Estimated total</span>
+                    <strong id="summaryPrice">$0.00</strong>
+                  </div>
+                </div>
+
+                <!-- notes -->
+                <div class="booking-section-heading mt-4">
+                  <p>Additional notes</p>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="formMessage">Message for our team</label>
+                  <textarea
+                    class="form-control"
+                    id="formMessage"
+                    rows="4"
+                    placeholder="Add special instructions, preferred staff notes, or anything we should know"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="d-grid mt-3">
+                  <button type="button" class="btn booking-btn" onclick="submitBooking()">
+                    Submit booking request
+                  </button>
+                </div>
+
+                <p class="booking-small-note mt-3 mb-0">
+                  Prices shown are estimated starting prices. Final pricing may vary depending on pet size,
+                  coat condition, service combination, and special care needs.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          crossorigin="anonymous"></script>
+
+ <script src="auth.js"></script>
+
+<script>
+  function getSelectedServices() {
+    const checkedServices = document.querySelectorAll('input[name="service"]:checked');
+
+    return Array.from(checkedServices).map(service => ({
+      name: service.value,
+      price: Number(service.dataset.price)
+    }));
+  }
+
+  function updateBookingSummary() {
+    const selectedServices = getSelectedServices();
+    const totalPets = Number(document.getElementById("totalPets").value) || 1;
+
+    const serviceNames = selectedServices.map(service => service.name);
+    const serviceTotal = selectedServices.reduce((sum, service) => sum + service.price, 0);
+    const estimatedTotal = serviceTotal * totalPets;
+
+    document.getElementById("summaryServices").textContent =
+      serviceNames.length > 0 ? serviceNames.join(", ") : "None yet";
+
+    document.getElementById("summaryPets").textContent = totalPets;
+    document.getElementById("summaryPrice").textContent = `$${estimatedTotal.toFixed(2)}`;
+  }
+
+  function fillBookingUserInfo() {
+    const currentUser = getCurrentUser();
+    if (!currentUser) return;
+
+    const fullName = (currentUser.name || "").trim();
+    const nameParts = fullName.split(" ");
+
+    document.getElementById("customerFirstName").value = nameParts[0] || "";
+    document.getElementById("customerLastName").value = nameParts.slice(1).join(" ") || "";
+    document.getElementById("email").value = currentUser.email || "";
+    document.getElementById("bookingPhone").value = currentUser.phone || "";
+  }
+
+  function setMinBookingDate() {
+    const bookingDateInput = document.getElementById("bookingDate");
+    const today = new Date().toISOString().split("T")[0];
+    bookingDateInput.min = today;
+  }
+
+  function getBookedSlotsByDate(selectedDate) {
+    const allBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    return allBookings
+      .filter(booking =>
+        booking.date === selectedDate &&
+        booking.status !== "Cancelled"
+      )
+      .map(booking => booking.time);
+  }
+
+  function updateTimeSlotAvailability() {
+    const dateValue = document.getElementById("bookingDate").value;
+    const timeSelect = document.getElementById("bookingTimeSlot");
+    const options = timeSelect.querySelectorAll("option");
+
+    options.forEach(option => {
+      option.disabled = false;
+      option.textContent = option.value || "Select a time slot";
+    });
+
+    if (!dateValue) return;
+
+    const bookedSlots = getBookedSlotsByDate(dateValue);
+
+    options.forEach(option => {
+      if (!option.value) return;
+
+      if (bookedSlots.includes(option.value)) {
+        option.disabled = true;
+        option.textContent = `${option.value} — Unavailable`;
+      }
+    });
+
+    if (timeSelect.value && bookedSlots.includes(timeSelect.value)) {
+      timeSelect.value = "";
+    }
+  }
+
+  function hasBookingConflict(date, time) {
+    const allBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    return allBookings.some(booking =>
+      booking.date === date &&
+      booking.time === time &&
+      booking.status !== "Cancelled"
+    );
+  }
+
+  function validateBookingForm() {
+    const firstName = document.getElementById("customerFirstName").value.trim();
+    const lastName = document.getElementById("customerLastName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("bookingPhone").value.trim();
+    const petName = document.getElementById("petName").value.trim();
+    const totalPets = document.getElementById("totalPets").value.trim();
+    const petDetails = document.getElementById("petDetails").value.trim();
+    const bookingDate = document.getElementById("bookingDate").value;
+    const bookingTime = document.getElementById("bookingTimeSlot").value;
+    const message = document.getElementById("formMessage").value.trim();
+    const selectedServices = getSelectedServices();
+
+    if (!firstName || !lastName || !email || !phone) {
+      alert("Please complete owner information.");
+      return false;
+    }
+
+    if (!petName || !totalPets || Number(totalPets) < 1 || !petDetails) {
+      alert("Please complete pet information.");
+      return false;
+    }
+
+    if (selectedServices.length === 0) {
+      alert("Please select at least one service.");
+      return false;
+    }
+
+    if (!bookingDate || !bookingTime) {
+      alert("Please select your preferred date and time.");
+      return false;
+    }
+
+    if (!message) {
+      alert("Please add a message for our team.");
+      return false;
+    }
+
+    return true;
+  }
+
+  function submitBooking() {
+    if (!requireLogin()) return;
+    if (!validateBookingForm()) return;
+
+    const currentUser = getCurrentUser();
+    const selectedServices = getSelectedServices();
+    const totalPets = Number(document.getElementById("totalPets").value) || 1;
+    const estimatedTotal = selectedServices.reduce((sum, service) => sum + service.price, 0) * totalPets;
+
+    const firstName = document.getElementById("customerFirstName").value.trim();
+    const lastName = document.getElementById("customerLastName").value.trim();
+    const bookingDate = document.getElementById("bookingDate").value;
+    const bookingTime = document.getElementById("bookingTimeSlot").value;
+
+    if (hasBookingConflict(bookingDate, bookingTime)) {
+      alert("Sorry, this date and time slot is already booked. Please choose another slot.");
+      updateTimeSlotAvailability();
+      return;
+    }
+
+    const newBooking = {
+      bookingId: "BK" + Date.now(),
+      userEmail: currentUser.email,
+      customerName: `${firstName} ${lastName}`.trim(),
+      phone: document.getElementById("bookingPhone").value.trim(),
+      petName: document.getElementById("petName").value.trim(),
+      totalPets: totalPets,
+      petDetails: document.getElementById("petDetails").value.trim(),
+      services: selectedServices,
+      date: bookingDate,
+      time: bookingTime,
+      message: document.getElementById("formMessage").value.trim(),
+      estimatedTotal: estimatedTotal.toFixed(2),
+      status: "Active",
+      createdAt: Date.now()  // numeric timestamp for 24h cancel logic
+    };
+
+    const allBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    allBookings.push(newBooking);
+    localStorage.setItem("bookings", JSON.stringify(allBookings));
+
+    alert("Booking submitted successfully!");
+    window.location.href = "customer_account.html";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!requireLogin()) return;
+
+    renderNavbarAuth();
+    fillBookingUserInfo();
+    setMinBookingDate();
+    updateBookingSummary();
+    updateTimeSlotAvailability();
+
+    document.querySelectorAll('input[name="service"]').forEach(input => {
+      input.addEventListener("change", updateBookingSummary);
+    });
+
+    document.getElementById("totalPets").addEventListener("input", updateBookingSummary);
+    document.getElementById("bookingDate").addEventListener("change", updateTimeSlotAvailability);
+  });
+</script>
+</body>
+
+</html>

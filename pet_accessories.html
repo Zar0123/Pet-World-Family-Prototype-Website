@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pet Accessories – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="pet_family_page.js"></script>
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+       <div class="d-flex align-items-center gap-2">
+  <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+    <i class="fa-regular fa-heart"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-wishlist-count>0</span>
+  </a>
+  <div class="d-flex align-items-center" id="navAuthArea"></div>
+</div>
+      </div>
+    </div>
+  </nav>
+  <div class="site-promo-bar text-center">
+  <p class="mb-0">Welcome offer: Use <strong>WELCOME10</strong> for 10% off your first order.</p>
+</div>
+
+  <!-- HERO + SEARCH -->
+  <header class="accessories-hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="section-kicker">Pet Accessories</p>
+          <h1 class="accessories-hero-title">Practical accessories for everyday comfort</h1>
+          <p class="accessories-hero-subtitle">
+            Discover beds, leashes, bowls, carriers, and grooming tools designed to support
+            simple daily routines at home and on the go.
+          </p>
+
+          <div class="accessories-hero-points">
+            <span><i class="fa-solid fa-bed"></i> Rest & sleep</span>
+            <span><i class="fa-solid fa-bowl-food"></i> Feeding essentials</span>
+            <span><i class="fa-solid fa-suitcase-rolling"></i> Travel support</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <form class="search-form" onsubmit="return searchProducts(event)">
+            <div class="search-box">
+              <input
+                type="search"
+                id="globalSearch"
+                placeholder="Search beds, collars, bowls, carriers..."
+                aria-label="Search accessories"
+              />
+              <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+          <div class="accessories-search-note">
+            Try: pet bed, leash, carrier, scratcher, grooming brush
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TOP CATEGORIES -->
+  <section class="accessory-categories-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="accessory-category-card">
+            <img src="images/pet_a1.webp" alt="Collars and leashes" />
+            
+            <h5>Collars & Leashes</h5>
+            <p>Secure options for everyday walks and outings.</p>
+            
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="accessory-category-card">
+            <img src="images/pet_a2.webp" alt="Beds and mats" />
+            <h5>Beds & Mats</h5>
+            <p>Soft, cozy spots for rest, naps, and nighttime sleep.</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="accessory-category-card">
+            <img src="images/pet_a3.webp" alt="Bowls and feeders" />
+            <h5>Bowls & Feeders</h5>
+            <p>Feeding setups that help keep mealtimes tidy.</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="accessory-category-card">
+            <img src="images/pet_a4.webp" alt="Carriers and bags" />
+            <h5>Carriers & Bags</h5>
+            <p>Support for safer, more comfortable travel together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+     <!-- FEATURED ACCESSORIES -->
+  <section class="featured-accessories-section py-5">
+    <div class="container">
+      <div class="accessories-section-heading mb-4">
+        <p class="mini-label">Recommended collection</p>
+        <h2>Featured Accessories</h2>
+        <p>
+          Comfort-focused products for home, walks, grooming, and trips outside,
+          chosen to make daily care easier to manage.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1. Pet Leash (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+  <img src="images/pet_ap1.webp" class="accessory-product-image" alt="Pet leash" />
+  <span class="sale-badge">10% OFF</span>
+  <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="14"
+    data-wishlist-name="Pet Leash"
+    data-wishlist-price="18"
+    data-wishlist-image="images/pet_ap1.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+</div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Leash</p>
+              <h5>Pet Leash</h5>
+              <p class="accessory-product-price">
+                <span class="old-price">$20.00</span>
+                <span class="new-price">$18.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-14"></p>
+              <button
+                class="btn add-cart"
+                data-id="14"
+                data-name="Pet Leash"
+                data-price="18"
+                data-image="images/pet_ap1.webp"
+              >
+                Add to cart 
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Soft Pet Bed (Bestseller) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+              <img src="images/pet_ap2.webp" class="accessory-product-image" alt="Soft pet bed" />
+              <span class="product-badge badge-bestseller">Bestseller</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="15"
+    data-wishlist-name="Soft Pet Bed"
+    data-wishlist-price="134.30"
+    data-wishlist-image="images/pet_ap2.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Bed</p>
+              <h5>Soft Pet Bed</h5>
+              <p class="accessory-product-price">
+                <span class="new-price">$134.30</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-15"></p>
+              <button
+                class="btn add-cart"
+                data-id="15"
+                data-name="Soft Pet Bed"
+                data-price="134.30"
+                data-image="images/pet_ap2.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Backpack Trolley Bag (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+              <img src="images/pet_ap3.webp" class="accessory-product-image" alt="Backpack trolley bag" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="16"
+    data-wishlist-name="Backpack Trolley Bag"
+    data-wishlist-price="89.00"
+    data-wishlist-image="images/pet_ap3.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Travel Bag</p>
+              <h5>Backpack Trolley Bag</h5>
+              <p class="accessory-product-price">
+                <span class="old-price">$98.90</span>
+                <span class="new-price">$89.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-16"></p>
+              <button
+                class="btn add-cart"
+                data-id="16"
+                data-name="Backpack Trolley Bag"
+                data-price="89.00"
+                data-image="images/pet_ap3.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Fur Removal Brush (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+              <img src="images/pet_ap4.webp" class="accessory-product-image" alt="Fur removal brush" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="17"
+    data-wishlist-name="Fur Removal Brush"
+    data-wishlist-price="10.70"
+    data-wishlist-image="images/pet_ap4.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Grooming Brush</p>
+              <h5>Fur Removal Brush</h5>
+              <p class="accessory-product-price">
+                <span class="old-price">$11.90</span>
+                <span class="new-price">$10.70</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-17"></p>
+              <button
+                class="btn add-cart"
+                data-id="17"
+                data-name="Fur Removal Brush"
+                data-price="10.70"
+                data-image="images/pet_ap4.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Cat Scratcher Bed Oval -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap">
+              <img src="images/pet_ap5.webp" class="accessory-product-image" alt="Cat scratcher bed" />
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="18"
+    data-wishlist-name="Cat Scratcher Bed Oval"
+    data-wishlist-price="11.60"
+    data-wishlist-image="images/pet_ap5.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Cat Scratcher</p>
+              <h5>Cat Scratcher Bed Oval</h5>
+              <p class="accessory-product-price">
+                <span class="new-price">$11.60</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-18"></p>
+              <button
+                class="btn add-cart"
+                data-id="18"
+                data-name="Cat Scratcher Bed Oval"
+                data-price="11.60"
+                data-image="images/pet_ap5.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Wooden Ladder -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap">
+              <img src="images/pet_ap6.webp" class="accessory-product-image" alt="Wooden ladder" />
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="19"
+    data-wishlist-name="Wooden Ladder"
+    data-wishlist-price="4.40"
+    data-wishlist-image="images/pet_ap6.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Ladder</p>
+              <h5>Wooden Ladder</h5>
+              <p class="accessory-product-price">
+                <span class="new-price">$4.40</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-19"></p>
+              <button
+                class="btn add-cart"
+                data-id="19"
+                data-name="Wooden Ladder"
+                data-price="4.40"
+                data-image="images/pet_ap6.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. 8-Shaped Cat Scratcher (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+              <img src="images/pet_ap7.webp" class="accessory-product-image" alt="8-shaped cat scratcher" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="20"
+    data-wishlist-name="8-Shaped Cat Scratcher"
+    data-wishlist-price="69.30"
+    data-wishlist-image="images/pet_ap7.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Cat Scratcher</p>
+              <h5>8-Shaped Cat Scratcher</h5>
+              <p class="accessory-product-price">
+                <span class="old-price">$77.00</span>
+                <span class="new-price">$69.30</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-20"></p>
+              <button
+                class="btn add-cart"
+                data-id="20"
+                data-name="8-Shaped Cat Scratcher"
+                data-price="69.30"
+                data-image="images/pet_ap7.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Cat Scratch Board – Fish Blue -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap">
+              <img src="images/pet_ap8.webp" class="accessory-product-image" alt="Cat scratch board" />
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="21"
+    data-wishlist-name="Cat Scratch Board – Fish Blue"
+    data-wishlist-price="8.90"
+    data-wishlist-image="images/pet_ap8.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Cat Scratch Board</p>
+              <h5>Cat Scratch Board – Fish Blue</h5>
+              <p class="accessory-product-price">
+                <span class="new-price">$8.90</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-21"></p>
+              <button
+                class="btn add-cart"
+                data-id="21"
+                data-name="Cat Scratch Board – Fish Blue"
+                data-price="8.90"
+                data-image="images/pet_ap8.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Pet Soft Mat (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="accessory-product-card">
+            <div class="accessory-product-image-wrap position-relative">
+              <img src="images/pet_ap9.webp" class="accessory-product-image" alt="Pet soft mat" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="22"
+    data-wishlist-name="Soft Mat"
+    data-wishlist-price="45.60"
+    data-wishlist-image="images/pet_ap9.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+              
+            </div>
+            <div class="accessory-product-content">
+              <p class="accessory-product-type">Soft Mat</p>
+              <h5>Pet Soft Mat</h5>
+              <p class="accessory-product-price">
+                <span class="old-price">$50.65</span>
+                <span class="new-price">$45.60</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-22"></p>
+              <button
+                class="btn add-cart"
+                data-id="22"
+                data-name="Pet Soft Mat"
+                data-price="45.60"
+                data-image="images/pet_ap9.webp"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ACCESSORIES -->
+  <section class="why-accessories-section py-5">
+    <div class="container">
+      <div class="why-accessories-box">
+        <div class="text-center mb-5">
+          <p class="why-accessories-label">Why accessories matter</p>
+          <h2>Thoughtful details for everyday care</h2>
+          <p class="why-accessories-text">
+            From beds and bowls to travel and grooming tools, each piece is chosen
+            to support daily routines with more comfort and confidence.
+          </p>
+        </div>
+
+        <div class="row text-center g-4">
+          <div class="col-md-3">
+            <div class="info-item">
+              <h5>Durable Quality</h5>
+              <p>Materials selected to stand up to regular daily use.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info-item">
+              <h5>Pet Comfort</h5>
+              <p>Shapes and textures made with pet rest and support in mind.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info-item">
+              <h5>Easy Care</h5>
+              <p>Many items are simple to clean, store, and maintain.</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info-item">
+              <h5>Home-Friendly Style</h5>
+              <p>Neutral, clean designs that fit naturally into your space.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care
+            essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">
+          &copy; February 2014 Pet World Family. All rights reserved
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+<!-- Auth -->
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof renderNavbarAuth === "function") {
+        renderNavbarAuth();
+      }
+    });
+  </script>
+
+  <!-- App scripts -->
+  <script src="inventory.js"></script>
+  <script src="cart.js"></script>
+  <script src="search.js"></script>
+  <script src="wishlist.js"></script>
+
+  
+<script>
+  function renderStockStatus() {
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      const productId = button.dataset.id;
+      const stockMessage = document.getElementById(`stock-msg-${productId}`);
+
+      if (!stockMessage || typeof getProductStock !== "function") return;
+
+      const stock = getProductStock(productId);
+
+      if (stock <= 0) {
+        const restockDate =
+          typeof getEstimatedRestockDate === "function"
+            ? getEstimatedRestockDate(productId)
+            : null;
+
+        stockMessage.innerHTML = restockDate
+          ? `Out of stock · Restocking around <strong>${restockDate}</strong>`
+          : `Out of stock`;
+
+        stockMessage.className = "stock-message out-of-stock mb-2";
+        button.disabled = true;
+        button.textContent = "Out of Stock";
+        button.classList.add("disabled-cart-btn");
+      } else if (stock <= 3) {
+        stockMessage.textContent = `Low stock · Only ${stock} left`;
+        stockMessage.className = "stock-message low-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      } else {
+        stockMessage.textContent = "In stock";
+        stockMessage.className = "stock-message in-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      }
+    });
+  }
+
+  
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof initializeStockStorage === "function") {
+      initializeStockStorage();
+    }
+
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        if (this.disabled) return;
+
+        const product = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image
+        };
+
+        if (typeof addToCart === "function") {
+          addToCart(product);
+        }
+      });
+    });
+
+    if (typeof updateWishlistButtons === "function") {
+      updateWishlistButtons();
+    }
+
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+
+    if (typeof renderStockStatus === "function") {
+      renderStockStatus();
+    }
+
+    if (typeof setupPageSearch === "function") {
+      setupPageSearch();
+    }
+  });
+</script>
+</body>
+
+</html>

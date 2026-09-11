@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pet Food – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- fontawesome icons -->
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+  <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+    <i class="fa-regular fa-heart"></i>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" data-wishlist-count>0</span>
+  </a>
+  <div class="d-flex align-items-center" id="navAuthArea"></div>
+</div>
+      </div>
+    </div>
+  </nav>
+  <div class="site-promo-bar text-center">
+  <p class="mb-0">Welcome offer: Use <strong>WELCOME10</strong> for 10% off your first order.</p>
+</div>
+
+  <!-- HERO + SEARCH (same style idea as pets_for_sale) -->
+  <header class="category-hero food-hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="section-kicker">Pet Food</p>
+          <h1 class="category-title">Healthy meals and treats for every pet</h1>
+          <p class="category-subtitle">
+            Explore nutritious food, broth toppers, supplements, and everyday feeding essentials
+            for dogs, cats, birds, and fish — chosen to support energy, digestion, and long‑term health.
+          </p>
+
+          <div class="food-hero-points">
+            <span><i class="fa-solid fa-check"></i> Daily nutrition</span>
+            <span><i class="fa-solid fa-check"></i> Life-stage options</span>
+            <span><i class="fa-solid fa-check"></i> Multiple pet types</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <form class="search-form" onsubmit="return searchProducts(event)">
+            <div class="search-box">
+              <input
+                type="search"
+                id="globalSearch"
+                placeholder="Search pet food, treats, supplements..."
+              />
+              <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="food-search-note">
+            Popular searches: puppy food, kitten recipe, cat broth, bird seeds, koi pellets
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!-- PRODUCT SECTION -->
+  <section class="pet-food-section py-5">
+    <div class="container">
+      <div class="food-section-title text-center mb-5">
+        <p class="mini-label">Recommended collection</p>
+        <h2>Popular Pet Food</h2>
+        <p>
+          Browse gently cooked meals, raw recipes, and supportive supplements for different ages
+          and species, all in one easy collection.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- 1 – Beef Puppy Meal (Bestseller) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_img" class="food-product-image" alt="Beef puppy food" />
+              <span class="product-badge badge-bestseller">Bestseller</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="23"
+    data-wishlist-name="Beef Puppy Meal"
+    data-wishlist-price="10.00"
+    data-wishlist-image="images/pet_product_img"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Gently cooked recipe for growing puppies.</p>
+              <h5>Beef Puppy Meal</h5>
+              <p class="food-product-price">
+                <span class="new-price">From $10.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-23"></p>
+              <button class="btn add-cart"
+                      data-id="23" data-name="Beef Puppy Meal" data-price="10"
+                      data-image="images/pet_product_img.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 – Pork Adult Recipe (New) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_2.webp" class="food-product-image" alt="Pork adult dog food" />
+              <span class="product-badge badge-new">New</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="24"
+    data-wishlist-name="Pork Adult Recipe"
+    data-wishlist-price="2.65"
+    data-wishlist-image="images/pet_product_2.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Balanced gently cooked meal for adult dogs.</p>
+              <h5>Pork Adult Recipe</h5>
+              <p class="food-product-price">
+                <span class="new-price">From $2.65</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-24"></p>
+              <button class="btn add-cart"
+                      data-id="24" data-name="Pork Adult Recipe" data-price="2.65"
+                      data-image="images/pet_product_2.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 – Mushroom Broth (10% OFF example) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_3.webp" class="food-product-image" alt="Mushroom broth" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="25"
+    data-wishlist-name="Mushroom Broth"
+    data-wishlist-price="8.50"
+    data-wishlist-image="images/pet_product_3.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Tasty broth topper for both dogs and cats.</p>
+              <h5>Mushroom Broth</h5>
+              <p class="food-product-price">
+                <span class="old-price">From $9.45</span>
+                <span class="new-price">From $8.50</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-25"></p>
+              <button class="btn add-cart"
+                      data-id="25" data-name="Mushroom Broth" data-price="8.50"
+                      data-image="images/pet_product_3.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 – Beef & Duck Kitten (Bestseller) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_4.png" class="food-product-image" alt="Beef and duck kitten food" />
+              <span class="product-badge badge-bestseller">Bestseller</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="26"
+    data-wishlist-name="Beef & Duck Kitten"
+    data-wishlist-price="11.25"
+    data-wishlist-image="images/pet_product_4.png"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">High-protein meal tailored for kittens.</p>
+              <h5>Beef & Duck Kitten</h5>
+              <p class="food-product-price">
+                <span class="new-price">From $11.25</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-22"></p>
+              <button class="btn add-cart"
+                      data-id="26" data-name="Beef & Duck Kitten" data-price="11.25"
+                      data-image="images/pet_product_4.png">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 – Chicken & Duck Senior (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_5.webp" class="food-product-image" alt="Chicken and duck senior cat food" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="27"
+    data-wishlist-name="Chicken & Duck Senior"
+    data-wishlist-price="11"
+    data-wishlist-image="images/pet_product_5.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Raw recipe designed for senior cats.</p>
+              <h5>Chicken & Duck Senior</h5>
+              <p class="food-product-price">
+                <span class="old-price">From $12.25</span>
+                <span class="new-price">From $11.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-27"></p>
+              <button class="btn add-cart"
+                      data-id="27" data-name="Chicken & Duck Senior" data-price="11"
+                      data-image="images/pet_product_5.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 – Digestive Aid Supplement -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap">
+              <img src="images/pet_product-6.webp" class="food-product-image" alt="Digestive aid supplement" />
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="28"
+    data-wishlist-name="Digestive Aid Supplement"
+    data-wishlist-price="29"
+    data-wishlist-image="images/pet_product-6.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Daily digestive support for dogs and cats.</p>
+              <h5>Digestive Aid Supplement</h5>
+              <p class="food-product-price">
+                <span class="new-price">From $29.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-28"></p>
+              <button class="btn add-cart"
+                      data-id="28" data-name="Digestive Aid Supplement" data-price="29"
+                      data-image="images/pet_product-6.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 – Emas 10 3‑in‑1 (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_7.webp" class="food-product-image" alt="Bird food seeds" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="29"
+    data-wishlist-name="Emas 10 3‑in‑1"
+    data-wishlist-price="5.80"
+    data-wishlist-image="images/pet_product_7.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Clean mixed seed blend for everyday bird feeding.</p>
+              <h5>Emas 10 3‑in‑1</h5>
+              <p class="food-product-price">
+                <span class="old-price">From $6.45</span>
+                <span class="new-price">From $5.80</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-29"></p>
+              <button class="btn add-cart"
+                      data-id="29" data-name="Emas 10 3‑in‑1" data-price="5.80"
+                      data-image="images/pet_product_7.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 – Roudybush Premium (10% OFF) -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap position-relative">
+              <img src="images/pet_product_8.webp" class="food-product-image" alt="Roudybush premium bird food" />
+              <span class="sale-badge">10% OFF</span>
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="30"
+    data-wishlist-name="Roudybush Premium"
+    data-wishlist-price="27.80"
+    data-wishlist-image="images/pet_product_8.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+              
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Pelleted diet for cockatiels and small parrots.</p>
+              <h5>Roudybush Premium</h5>
+              <p class="food-product-price">
+                <span class="old-price">From $30.90</span>
+                <span class="new-price">From $27.80</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-30"></p>
+              <button class="btn add-cart"
+                      data-id="30" data-name="Roudybush Premium" data-price="27.80"
+                      data-image="images/pet_product_8.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 – Hikari Wheat Germ -->
+        <div class="col-md-6 col-lg-4 searchable-product">
+          <div class="food-product-card">
+            <div class="food-product-image-wrap">
+              <img src="images/pet_product_9.webp" class="food-product-image" alt="Hikari wheat germ fish food" />
+              <button
+    type="button"
+    class="wishlist-btn-icon"
+    data-wishlist-id="31"
+    data-wishlist-name="Hikari Wheat Germ"
+    data-wishlist-price="53"
+    data-wishlist-image="images/pet_product_7.webp"
+    onclick="handleWishlistButtonClick(this)"
+  >
+    <i class="fa-regular fa-heart"></i>
+  </button>
+            </div>
+            <div class="food-product-content">
+              <p class="food-product-type">Floating pellets for koi and pond fish.</p>
+              <h5>Hikari Wheat Germ</h5>
+              <p class="food-product-price">
+                <span class="new-price">From $53.00</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-31"></p>
+              <button class="btn add-cart"
+                      data-id="31" data-name="Hikari Wheat Germ" data-price="53"
+                      data-image="images/pet_product_9.webp">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD INFO SECTION (instead of big carousel feeling empty) -->
+  <section class="food-info-section py-5">
+    <div class="container">
+      <div class="food-section-title text-center mb-5">
+        <p class="mini-label">Why pet owners choose us</p>
+        <h2>Nutrition You Can Shop With Confidence</h2>
+        <p>
+          We offer a thoughtful range of food options for different ages, sizes, and feeding needs,
+          so you can build simple and consistent routines for your pets.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="food-info-card">
+            <i class="fa-solid fa-bowl-food"></i>
+            <h5>Balanced Choices</h5>
+            <p>Meals, toppers, and supplements selected to support everyday nutrition and variety.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-info-card">
+            <i class="fa-solid fa-heart-circle-check"></i>
+            <h5>Care for Every Stage</h5>
+            <p>Options for puppies, kittens, adult pets, senior companions, birds, and fish.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="food-info-card">
+            <i class="fa-solid fa-leaf"></i>
+            <h5>Practical Daily Feeding</h5>
+            <p>Products chosen to fit simple feeding routines for busy households.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer (same as other pages) -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care
+            essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">
+          &copy; February 2014 Pet World Family. All rights reserved
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
+<!-- Auth -->
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof renderNavbarAuth === "function") {
+        renderNavbarAuth();
+      }
+    });
+  </script>
+
+  <!-- App scripts -->
+  <script src="inventory.js"></script>
+  <script src="cart.js"></script>
+  <script src="search.js"></script>
+  <script src="wishlist.js"></script>
+
+  
+<script>
+  function renderStockStatus() {
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      const productId = button.dataset.id;
+      const stockMessage = document.getElementById(`stock-msg-${productId}`);
+
+      if (!stockMessage || typeof getProductStock !== "function") return;
+
+      const stock = getProductStock(productId);
+
+      if (stock <= 0) {
+        const restockDate =
+          typeof getEstimatedRestockDate === "function"
+            ? getEstimatedRestockDate(productId)
+            : null;
+
+        stockMessage.innerHTML = restockDate
+          ? `Out of stock · Restocking around <strong>${restockDate}</strong>`
+          : `Out of stock`;
+
+        stockMessage.className = "stock-message out-of-stock mb-2";
+        button.disabled = true;
+        button.textContent = "Out of Stock";
+        button.classList.add("disabled-cart-btn");
+      } else if (stock <= 3) {
+        stockMessage.textContent = `Low stock · Only ${stock} left`;
+        stockMessage.className = "stock-message low-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      } else {
+        stockMessage.textContent = "In stock";
+        stockMessage.className = "stock-message in-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      }
+    });
+  }
+
+  
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof initializeStockStorage === "function") {
+      initializeStockStorage();
+    }
+
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        if (this.disabled) return;
+
+        const product = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image
+        };
+
+        if (typeof addToCart === "function") {
+          addToCart(product);
+        }
+      });
+    });
+
+    if (typeof updateWishlistButtons === "function") {
+      updateWishlistButtons();
+    }
+
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+
+    if (typeof renderStockStatus === "function") {
+      renderStockStatus();
+    }
+
+    if (typeof setupPageSearch === "function") {
+      setupPageSearch();
+    }
+  });
+</script>
+</body>
+
+</html>

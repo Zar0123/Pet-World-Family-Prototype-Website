@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pets for Sale – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              data-wishlist-count>0</span>
+          </a>
+          <div class="d-flex align-items-center" id="navAuthArea"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="site-promo-bar text-center">
+    <p class="mb-0">Welcome offer: Use <strong>WELCOME10</strong> for 10% off your first order.</p>
+  </div>
+
+  <!-- Page heading + search -->
+  <header class="category-hero">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-lg-7">
+          <p class="section-kicker">Pets for Sale</p>
+          <h1 class="category-title">Healthy, happy pets ready for their new family</h1>
+          <p class="category-subtitle">
+            Browse different breeds and find the pet that matches your family’s lifestyle.
+          </p>
+        </div>
+        <div class="col-lg-5">
+          <form class="search-form" onsubmit="return searchProducts(event)">
+            <div class="search-box">
+              <input type="search" id="globalSearch" placeholder="Search by pet, breed, or category..." />
+              <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Pets for Sale -->
+  <section class="pets-sale-section">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-3">
+        <div>
+          <h2 class="section-title">Available Pets</h2>
+          <p class="section-subtitle">
+            All pets are checked by our vets and come with basic health records.
+          </p>
+        </div>
+      </div>
+
+      <div class="pets-grid">
+        <!-- 1 – Poodle (10% OFF) -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap position-relative">
+            <img src="images/poodle.avif" alt="Poodle" />
+            <span class="sale-badge">10% OFF</span>
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="42" data-wishlist-name="Poodle"
+              data-wishlist-price="1200" data-wishlist-image="images/poodle.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Poodle</h5>
+              <p class="pet-price">
+                <span class="old-price">$1,333</span>
+                <span class="new-price">$1,200</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-42"></p>
+            </div>
+            <p class="pet-tags">
+              3 months • Female • White
+            </p>
+            <p class="pet-desc">
+              Friendly, playful, and intelligent. Great for families and indoor living.
+            </p>
+            <button class="btn add-cart" data-id="42" data-name="Poodle" data-price="1200"
+              data-image="images/poodle.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 2 – Shiba Inu (Bestseller) -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap position-relative">
+            <img src="images/shiba_Inu.avif" alt="Shiba Inu" />
+            <span class="product-badge badge-bestseller">Bestseller</span>
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="43" data-wishlist-name="Shiba Inu"
+              data-wishlist-price="1500" data-wishlist-image="images/shiba_Inu.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Shiba Inu</h5>
+              <p class="pet-price">
+                <span class="new-price">$1,500</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-43"></p>
+            </div>
+            <p class="pet-tags">
+              4 months • Male • Brown &amp; White
+            </p>
+            <p class="pet-desc">
+              Independent and energetic, loyal companion with a trendy fox-like look.
+            </p>
+            <button class="btn add-cart" data-id="43" data-name="Shiba Inu" data-price="1500"
+              data-image="images/shiba_Inu.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 3 – British Shorthair (New) -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap position-relative">
+            <img src="images/british_shorthair.avif" alt="British Shorthair" />
+            <span class="product-badge badge-new">New</span>
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="44" data-wishlist-name="British Shorthair"
+              data-wishlist-price="1000" data-wishlist-image="images/british_shorthair.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">British Shorthair</h5>
+              <p class="pet-price">
+                <span class="new-price">$1,000</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-44"></p>
+            </div>
+            <p class="pet-tags">
+              5 months • Female • Grey (Blue)
+            </p>
+            <p class="pet-desc">
+              Calm indoor cat with a round face and soft plush coat.
+            </p>
+            <button class="btn add-cart" data-id="44" data-name="British Shorthair" data-price="1000"
+              data-image="images/british_shorthair.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 4 – Persian Cat -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap">
+            <img src="images/persian_cat.avif" alt="Persian Cat" />
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="45" data-wishlist-name="Persian Cat"
+              data-wishlist-price="900" data-wishlist-image="images/persian_cat.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Persian Cat</h5>
+              <p class="pet-price">
+                <span class="new-price">$900</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-45"></p>
+            </div>
+            <p class="pet-tags">
+              4 months • Male • White
+            </p>
+            <p class="pet-desc">
+              Elegant and fluffy companion, requires regular grooming care.
+            </p>
+            <button class="btn add-cart" data-id="45" data-name="Persian Cat" data-price="900"
+              data-image="images/persian_cat.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 5 – Mini Lop Rabbit (10% OFF) -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap position-relative">
+            <img src="images/rabbit.avif" alt="Mini Lop Rabbit" />
+            <span class="sale-badge">10% OFF</span>
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="46" data-wishlist-name="Mini Lop Rabbit"
+              data-wishlist-price="1200" data-wishlist-image="images/rabbit.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Mini Lop Rabbit</h5>
+              <p class="pet-price">
+                <span class="old-price">$1,333</span>
+                <span class="new-price">$1,200</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-46"></p>
+            </div>
+            <p class="pet-tags">
+              2 months • Female • Brown &amp; White
+            </p>
+            <p class="pet-desc">
+              Gentle and quiet pet, perfect for first-time pet owners.
+            </p>
+            <button class="btn add-cart" data-id="46" data-name="Mini Lop Rabbit" data-price="1200"
+              data-image="images/rabbit.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 6 – Syrian Hamster -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap">
+            <img src="images/hamster.avif" alt="Syrian Hamster" />
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="47" data-wishlist-name="Syrian Hamster"
+              data-wishlist-price="25" data-wishlist-image="images/hamster.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Syrian Hamster</h5>
+              <p class="pet-price">
+                <span class="new-price">$25</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-47"></p>
+            </div>
+            <p class="pet-tags">
+              1 month • Male • Golden
+            </p>
+            <p class="pet-desc">
+              Small, low-maintenance pet that loves exploring and nibbling treats.
+            </p>
+            <button class="btn add-cart" data-id="47" data-name="Syrian Hamster" data-price="25"
+              data-image="images/hamster.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 7 – Lovebird (Pair) -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap">
+            <img src="images/parrot.avif" alt="Lovebird" />
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="48" data-wishlist-name="Lovebird"
+              data-wishlist-price="180" data-wishlist-image="images/parrot.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Lovebird (Pair)</h5>
+              <p class="pet-price">
+                <span class="new-price">$180</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-48"></p>
+            </div>
+            <p class="pet-tags">
+              3 months • Pair • Green &amp; Yellow
+            </p>
+            <p class="pet-desc">
+              Colorful and social birds that can learn simple sounds.
+            </p>
+            <button class="btn add-cart" data-id="48" data-name="Lovebird" data-price="180"
+              data-image="images/parrot.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 8 – Halfmoon Betta -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap">
+            <img src="images/betta_fish.avif" alt="Halfmoon Betta" />
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="49" data-wishlist-name="Halfmoon Betta"
+              data-wishlist-price="20" data-wishlist-image="images/betta_fish.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Halfmoon Betta</h5>
+              <p class="pet-price">
+                <span class="new-price">$20</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-49"></p>
+            </div>
+            <p class="pet-tags">
+              6 months • Male • Blue &amp; Red
+            </p>
+            <p class="pet-desc">
+              Vibrant fins and easy tank setup, ideal for small spaces.
+            </p>
+            <button class="btn add-cart" data-id="49" data-name="Halfmoon Betta" data-price="20"
+              data-image="images/betta_fish.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <!-- 9 – Red-Eared Slider -->
+        <article class="pet-card searchable-product">
+          <div class="pet-image-wrap">
+            <img src="images/turtle.avif" alt="Red-Eared Slider" />
+            <button type="button" class="wishlist-btn-icon" data-wishlist-id="50" data-wishlist-name="Red-Eared Slider"
+              data-wishlist-price="50" data-wishlist-image="images/turtle.avif"
+              onclick="handleWishlistButtonClick(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="pet-card-body">
+            <div class="pet-meta-row">
+              <h5 class="pet-name">Red-Eared Slider</h5>
+              <p class="pet-price">
+                <span class="new-price">$50</span>
+              </p>
+              <p class="stock-message mb-2" id="stock-msg-50"></p>
+            </div>
+            <p class="pet-tags">
+              3 months • Gender: Unknown • Green
+            </p>
+            <p class="pet-desc">
+              Calm, long-living turtle that needs a proper water tank setup.
+            </p>
+            <button class="btn add-cart" data-id="50" data-name="Red-Eared Slider" data-price="50"
+              data-image="images/turtle.avif">
+              Add to Cart
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pet breeds info (secondary section) -->
+  <section class="breed-info-section">
+    <div class="container">
+      <h2 class="section-title text-center">Pet Breeds Information</h2>
+      <p class="section-subtitle text-center mb-4">
+        Learn about different breeds to choose the right companion for your home.
+      </p>
+
+      <div class="breed-grid">
+        <article class="breed-card">
+          <img src="images/germ_shepherd.avif" alt="German Shepherd">
+          <h4>German Shepherd</h4>
+          <p><strong>Origin:</strong> Germany</p>
+          <p><strong>Personality:</strong> Intelligent, loyal</p>
+          <p><strong>Style:</strong> Strong and active</p>
+          <a href="javascript:void(0)" onclick="toggleBreedInfo('breed1')">Learn more</a>
+          <div id="breed1" class="breed-more" style="display:none;">
+            <p>German Shepherds are friendly, highly trainable, and form strong bonds with families.</p>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <img src="images/golden_retriever.avif" alt="Golden Retriever">
+          <h4>Golden Retriever</h4>
+          <p><strong>Origin:</strong> Scotland</p>
+          <p><strong>Personality:</strong> Friendly, gentle</p>
+          <p><strong>Style:</strong> Playful and loyal</p>
+          <a href="javascript:void(0)" onclick="toggleBreedInfo('breed2')">Learn more</a>
+          <div id="breed2" class="breed-more" style="display:none;">
+            <p>Golden Retrievers enjoy family life, love playing fetch, and are easy to train.</p>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <img src="images/bull_dog.avif" alt="Bulldog">
+          <h4>Bulldog</h4>
+          <p><strong>Origin:</strong> England</p>
+          <p><strong>Personality:</strong> Calm, gentle</p>
+          <p><strong>Style:</strong> Stocky and friendly</p>
+          <a href="javascript:void(0)" onclick="toggleBreedInfo('breed3')">Learn more</a>
+          <div id="breed3" class="breed-more" style="display:none;">
+            <p>Bulldogs enjoy short walks and lots of rest and are very affectionate with people.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer (same as other pages) -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care
+            essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">
+          &copy; February 2014 Pet World Family. All rights reserved
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+ <!-- Auth -->
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof renderNavbarAuth === "function") {
+        renderNavbarAuth();
+      }
+    });
+  </script>
+
+  <!-- App scripts -->
+  <script src="inventory.js"></script>
+  <script src="cart.js"></script>
+  <script src="search.js"></script>
+  <script src="wishlist.js"></script>
+
+  
+<script>
+  function renderStockStatus() {
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      const productId = button.dataset.id;
+      const stockMessage = document.getElementById(`stock-msg-${productId}`);
+
+      if (!stockMessage || typeof getProductStock !== "function") return;
+
+      const stock = getProductStock(productId);
+
+      if (stock <= 0) {
+        const restockDate =
+          typeof getEstimatedRestockDate === "function"
+            ? getEstimatedRestockDate(productId)
+            : null;
+
+        stockMessage.innerHTML = restockDate
+          ? `Out of stock · Restocking around <strong>${restockDate}</strong>`
+          : `Out of stock`;
+
+        stockMessage.className = "stock-message out-of-stock mb-2";
+        button.disabled = true;
+        button.textContent = "Out of Stock";
+        button.classList.add("disabled-cart-btn");
+      } else if (stock <= 3) {
+        stockMessage.textContent = `Low stock · Only ${stock} left`;
+        stockMessage.className = "stock-message low-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      } else {
+        stockMessage.textContent = "In stock";
+        stockMessage.className = "stock-message in-stock mb-2";
+        button.disabled = false;
+        button.textContent = "Add to Cart";
+        button.classList.remove("disabled-cart-btn");
+      }
+    });
+  }
+
+  
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof initializeStockStorage === "function") {
+      initializeStockStorage();
+    }
+
+    const cartButtons = document.querySelectorAll(".add-cart");
+
+    cartButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        if (this.disabled) return;
+
+        const product = {
+          id: this.dataset.id,
+          name: this.dataset.name,
+          price: this.dataset.price,
+          image: this.dataset.image
+        };
+
+        if (typeof addToCart === "function") {
+          addToCart(product);
+        }
+      });
+    });
+
+    if (typeof updateWishlistButtons === "function") {
+      updateWishlistButtons();
+    }
+
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+
+    if (typeof renderStockStatus === "function") {
+      renderStockStatus();
+    }
+
+    if (typeof setupPageSearch === "function") {
+      setupPageSearch();
+    }
+  });
+</script>
+</body>
+
+</html>

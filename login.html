@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login – Pet World Family</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="pet_family_page.js"></script>
+
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="login-page">
+    <div class="container">
+      <div class="row min-vh-100 align-items-center justify-content-center g-4">
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="login-info-panel">
+            <p class="login-kicker">Pet World Family</p>
+            <h1>Welcome back to your account</h1>
+            <p class="login-info-text">
+              Log in to continue shopping, manage your profile, and enjoy a smoother
+              experience across pet food, toys, accessories, and grooming essentials.
+            </p>
+
+            <div class="login-benefits">
+              <div class="login-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Quick access to your saved account details</span>
+              </div>
+              <div class="login-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Simple login for returning customers</span>
+              </div>
+              <div class="login-benefit-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Professional and secure account experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-lg-5">
+          <div class="login-card">
+            <div class="login-card-inner">
+              <div class="text-center mb-4">
+                <div class="login-brand-icon">
+                  <i class="fa-solid fa-paw"></i>
+                </div>
+                <h2 class="login-title">Login</h2>
+                <p class="login-subtitle mb-0">Welcome back to Pet World Family</p>
+              </div>
+
+              <form class="login-form" novalidate onsubmit="event.preventDefault(); loginUser();">
+                <div class="mb-3">
+                  <label class="form-label" for="loginEmail">Email Address</label>
+                  <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email address"
+                    autocomplete="username" required>
+                </div>
+
+                <div class="mb-2">
+                  <label class="form-label" for="loginPassword">Password</label>
+                  <div class="password-field">
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password"
+                      autocomplete="current-password" required>
+                    <button type="button" class="password-toggle" onclick="togglePassword('loginPassword', this)">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end mb-3">
+                  <a href="forgot_password.html" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <div class="form-check login-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">
+                    Remember me on this device
+                  </label>
+                </div>
+
+                <div class="d-grid mb-3">
+                  <button type="submit" class="btn login-btn btn-lg">
+                    Login
+                  </button>
+                </div>
+
+                <div class="text-center">
+                  <small class="login-register-text">
+                    Don’t have an account?
+                    <a href="register_form.html" class="register-link">Create One</a>
+                  </small>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+ <script src="auth.js"></script>
+<script>
+  function loginUser() {
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value.trim();
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    if (!email || !password) {
+      alert("Please enter your email and password.");
+      return;
+    }
+
+    const users = getUsers();
+
+    if (users.length === 0) {
+      alert("No registered users found. Please create an account first.");
+      window.location.href = "register_form.html";
+      return;
+    }
+
+    const matchedUser = users.find(user => user.email === email && user.password === password);
+
+    if (!matchedUser) {
+      const emailExists = users.some(user => user.email === email);
+
+      if (emailExists) {
+        alert("Incorrect password. Please try again.");
+      } else {
+        alert("No account found with this email.");
+      }
+      return;
+    }
+
+    localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+    localStorage.setItem("isLoggedIn", "true");
+
+    if (rememberMe) {
+      localStorage.setItem("rememberedEmail", email);
+    } else {
+      localStorage.removeItem("rememberedEmail");
+    }
+
+    alert("Login successful!");
+    window.location.href = "index.html";
+  }
+
+  function loadRememberedEmail() {
+    const rememberedEmail = localStorage.getItem("rememberedEmail");
+    if (rememberedEmail) {
+      document.getElementById("loginEmail").value = rememberedEmail;
+      document.getElementById("rememberMe").checked = true;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadRememberedEmail);
+
+  
+</script>
+
+
+</body>
+
+</html>

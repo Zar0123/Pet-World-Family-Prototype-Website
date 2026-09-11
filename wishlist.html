@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wishlist – Pet World Family</title>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="pet_family_page.js"></script>
+  <!-- fontawesome icons link -->
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+         <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              data-wishlist-count>0</span>
+          </a>
+          <div class="d-flex align-items-center" id="navAuthArea"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="wishlist-hero">
+    <div class="container">
+      <div class="wishlist-hero-content text-center">
+        <p class="wishlist-kicker">Saved favourites</p>
+        <h1>Your pet care wishlist</h1>
+        <p>
+          Save products you love, compare them later, and move them to cart whenever you are ready.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISHLIST CONTENT -->
+  <section class="wishlist-page-section py-5">
+    <div class="container">
+      <div class="wishlist-shell">
+        <div class="wishlist-topbar">
+          <div>
+            <h3 class="wishlist-section-title">Wishlist Items</h3>
+            <p class="wishlist-section-subtitle mb-0">Review your saved products and move favourites into your cart.</p>
+          </div>
+          <button type="button" class="btn clear-wishlist-btn" onclick="clearWishlistItems()">
+            Clear Wishlist
+          </button>
+        </div>
+
+        <div id="wishlist-items" class="wishlist-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2"><i class="fa-brands fa-square-facebook"></i></a>
+          <a href="#" class="text-decoration-none d-block mb-2"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-decoration-none d-block mb-2"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">&copy; February 2014 Pet World Family. All rights reserved</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="auth.js"></script>
+<script src="inventory.js"></script>
+<script src="cart.js"></script>
+<script src="wishlist.js"></script>
+
+  <script>
+  function renderWishlistPage() {
+    const wishlistContainer = document.getElementById("wishlist-items");
+    const wishlist = getWishlist();
+
+    if (wishlist.length === 0) {
+      wishlistContainer.innerHTML = `
+        <div class="empty-wishlist-state text-center py-5">
+          <i class="fa-solid fa-heart-circle-xmark mb-3" style="font-size:2.8rem; color:#a12d42;"></i>
+          <h4>Your wishlist is empty</h4>
+          <p class="text-muted mb-3">Save your favourite pet products here and come back anytime.</p>
+          <a href="pet_food.html" class="btn continue-shopping-btn">Start Shopping</a>
+        </div>
+      `;
+      return;
+    }
+
+    wishlistContainer.innerHTML = "";
+
+    wishlist.forEach(item => {
+      wishlistContainer.innerHTML += `
+        <div class="wishlist-card-item">
+          <div class="wishlist-image-wrap">
+            <img src="${item.image}" alt="${item.name}" class="wishlist-item-image">
+            <button type="button" class="wishlist-remove-icon" onclick="removeWishlistItem('${String(item.id)}')" aria-label="Remove from wishlist">
+              <i class="fa-solid fa-heart-crack"></i>
+            </button>
+          </div>
+
+          <div class="wishlist-card-body">
+            <h5 class="wishlist-item-title">${item.name}</h5>
+            <p class="wishlist-item-price mb-3">$${Number(item.price).toFixed(2)}</p>
+
+            <div class="wishlist-card-actions">
+              <button type="button" class="btn wishlist-cart-btn" onclick="moveToCart('${String(item.id)}')">
+                <i class="fa-solid fa-cart-shopping me-2"></i>Add to Cart
+              </button>
+              <button type="button" class="btn wishlist-remove-btn" onclick="removeWishlistItem('${String(item.id)}')">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function removeWishlistItem(productId) {
+    removeFromWishlist(productId);
+    renderWishlistPage();
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+  }
+
+  function moveToCart(productId) {
+    const wishlist = getWishlist();
+    const item = wishlist.find(product => String(product.id) === String(productId));
+    if (!item) return;
+
+    const cartItem = {
+      id: item.id,
+      name: item.name,
+      price: Number(item.price),
+      image: item.image
+    };
+
+    addToCart(cartItem);
+    removeFromWishlist(productId);
+    renderWishlistPage();
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+  }
+
+  function clearWishlistItems() {
+    const wishlist = getWishlist();
+
+    if (wishlist.length === 0) {
+      alert("Your wishlist is already empty.");
+      return;
+    }
+
+    const confirmed = confirm("Are you sure you want to clear your wishlist?");
+    if (!confirmed) return;
+
+    clearWishlist();
+    renderWishlistPage();
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof renderNavbarAuth === "function") {
+      renderNavbarAuth();
+    }
+    renderWishlistPage();
+    if (typeof updateWishlistNavCount === "function") {
+      updateWishlistNavCount();
+    }
+  });
+</script>
+</body>
+</html>

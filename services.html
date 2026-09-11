@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="pet_family_page.js"></script>
+  <!-- fontawesome icons link -->
+  <script src="https://kit.fontawesome.com/c95cdd7120.js" crossorigin="anonymous"></script>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold me-1" style="font-family:'Dancing Script', cursive; font-size:1.6rem; color:#a12d42;">
+          Pet World Family
+        </span>
+        <span><i class="fa-solid fa-paw" style="color:#a12d42;"></i></span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Product Category
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pets_for_sale.html">Pets For Sale</a></li>
+              <li><a class="dropdown-item" href="pet_food.html">Pet Food</a></li>
+              <li><a class="dropdown-item" href="pet_toys.html">Pet Toys</a></li>
+              <li><a class="dropdown-item" href="pet_accessories.html">Pet Accessories</a></li>
+              <li><a class="dropdown-item" href="grooming_product.html">Grooming Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="donation.html">Donation</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+         <div class="d-flex align-items-center gap-2">
+          <a href="wishlist.html" class="btn position-relative wishlist-nav-btn">
+            <i class="fa-regular fa-heart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              data-wishlist-count>0</span>
+          </a>
+          <div class="d-flex align-items-center" id="navAuthArea"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="site-promo-bar text-center">
+  <p class="mb-0">Welcome offer: Use <strong>WELCOME10</strong> for 10% off your first order.</p>
+</div>
+
+
+<!-- hero / banner -->
+<section class="services-hero-section">
+  <div class="container">
+    <div class="services-hero-box">
+      <p class="services-hero-label">Pet World Family</p>
+      <h1>Care Services for Pets</h1>
+      <p class="services-hero-text">
+        Grooming, health checks, and everyday support designed to keep pets comfortable and well cared for.
+        
+      </p>
+      <a href="booking_form.html" class="btn services-hero-btn">
+        Book an Appointment
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- main services -->
+<section class="services-list-section py-5">
+  <div class="container">
+    <div class="services-section-heading mb-4">
+      <h2>Our Core Services</h2>
+      <p>
+  Choose from grooming, health support, and care services, with room to add daycare and training later.
+</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-scissors"></i>
+          </div>
+          <h5>Full Grooming</h5>
+          <p>
+            Bath, coat trim, drying, and basic styling for a clean, refreshed look.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-shower"></i>
+          </div>
+          <h5>Bath & Blow Dry</h5>
+          <p>
+            Gentle bath, drying, and brushing to keep your pet’s coat soft and tidy.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-hand-holding-medical"></i>
+          </div>
+          <h5>Basic Health Check</h5>
+          <p>
+            A quick check and guidance on skin, coat, and general daily care.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card">
+          <div class="service-icon-wrap">
+            <i class="fa-solid fa-paw"></i>
+          </div>
+          <h5>Nail & Paw Care</h5>
+          <p>
+            Nail trimming and light paw care to keep walking comfortable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- how it works -->
+<section class="how-it-works-section py-5">
+  <div class="container">
+    <div class="services-section-heading mb-4">
+      <h2>How It Works</h2>
+      <p>
+        A simple three-step process to book and enjoy care for your pet.
+      </p>
+    </div>
+
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="how-step-card">
+          <span class="how-step-number">1</span>
+          <h5>Choose a Service</h5>
+          <p>Select the service that best matches your pet’s needs.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="how-step-card">
+          <span class="how-step-number">2</span>
+          <h5>Book a Time</h5>
+          <p>Pick a suitable date and time in our booking form.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="how-step-card">
+          <span class="how-step-number">3</span>
+          <h5>Visit & Relax</h5>
+          <p>Bring your pet in and let our team handle the care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- call to action -->
+<section class="services-cta-section py-5">
+  <div class="container">
+    <div class="services-cta-box">
+      <h2>Ready to Book a Service?</h2>
+      <p>
+        Schedule a visit and let our team support your pet’s grooming and daily care.
+      </p>
+      <a href="booking_form.html" class="btn services-hero-btn">
+        Book Appointment
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- service gallery -->
+<section class="service-gallery py-5">
+  <div class="container">
+    <div class="services-section-heading mb-4">
+      <h2>Moments From Our Care</h2>
+      <p>
+        A few glimpses of pets enjoying their grooming and care visits.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <img src="images/petservices_img1.jpg" class="img-fluid service-photo" alt="Pet grooming 1" />
+      </div>
+      <div class="col-md-3 col-6">
+        <img src="images/petservices_img2.jpg" class="img-fluid service-photo" alt="Pet grooming 2" />
+      </div>
+      <div class="col-md-3 col-6">
+        <img src="images/petservices_img3.jpg" class="img-fluid service-photo" alt="Pet grooming 3" />
+      </div>
+      <div class="col-md-3 col-6">
+        <img src="images/petservices_img4.jpg" class="img-fluid service-photo" alt="Pet grooming 4" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="service-reviews-section py-5">
+  <div class="container">
+    <div class="services-section-heading mb-4">
+      <h2>Customer Reviews</h2>
+      <p>
+        Feedback from pet owners who have used our grooming and care services.
+      </p>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-md-6">
+        <div class="review-card">
+          <p class="stars">⭐⭐⭐⭐⭐</p>
+          <p>
+            “The grooming service was excellent and the staff were very kind to my dog.”
+          </p>
+          <span>- Emily</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="review-card">
+          <p class="stars">⭐⭐⭐⭐</p>
+          <p>
+            “Health check was smooth, and they explained everything clearly.”
+          </p>
+          <span>- John</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-form">
+      <h5 class="mb-3">Share Your Experience</h5>
+      <textarea id="serviceReviewText" placeholder="Write your review..." rows="3"></textarea>
+
+      <div class="star-rating mb-3">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+
+      <button type="button" class="btn services-hero-btn" onclick="addServiceReview()">
+        Submit Review
+      </button>
+    </div>
+
+    <div id="serviceReviewList" class="mt-4"></div>
+  </div>
+</section>
+
+ <!-- footer (same as other pages) -->
+  <section class="footer px-5 pb-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <h4 class="fw-bold navbar-brand">Pet World Family</h4>
+          <p>
+            We provide quality pet food, toys, grooming, and health care
+            essentials for your lovely pets.
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p>Email: petworldfamily@gmail.com</p>
+          <p>Phone: +86 1234 5678 910</p>
+          <p>Location: China Shanghai</p>
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-square-facebook"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-block mb-2">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <hr />
+      <div class="text-center">
+        <p class="mb-0">
+          &copy; February 2014 Pet World Family. All rights reserved
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="auth.js"></script>
+  <Script src="wishlist.js"></Script>
+  
+<script src="wishlist.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", renderNavbarAuth);
+</script>
+
+<script>
+  let selectedServiceRating = 0;
+
+  function getServiceReviews() {
+    return JSON.parse(localStorage.getItem("serviceReviews")) || [];
+  }
+
+  function saveServiceReviews(reviews) {
+    localStorage.setItem("serviceReviews", JSON.stringify(reviews));
+  }
+
+  function renderSelectedStars(rating) {
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+      const value = Number(star.dataset.value);
+
+      if (value <= rating) {
+        star.classList.add("active");
+      } else {
+        star.classList.remove("active");
+      }
+    });
+  }
+
+  function renderServiceReviews() {
+    const reviewList = document.getElementById("serviceReviewList");
+    const reviews = getServiceReviews();
+
+    if (!reviewList) return;
+
+    if (reviews.length === 0) {
+      reviewList.innerHTML = `
+        <div class="review-card">
+          <p class="mb-0">No reviews yet. Be the first to share your experience.</p>
+        </div>
+      `;
+      return;
+    }
+
+    reviewList.innerHTML = reviews
+      .slice()
+      .reverse()
+      .map(review => {
+        const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+        return `
+          <div class="review-card mb-3">
+            <p class="stars">${stars}</p>
+            <p>${review.text}</p>
+            <span>- ${review.name}</span>
+          </div>
+        `;
+      })
+      .join("");
+  }
+
+  function addServiceReview() {
+    const reviewTextElement = document.getElementById("serviceReviewText");
+    const currentUser = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+
+    const reviewText = reviewTextElement.value.trim();
+    const reviewerName = currentUser && currentUser.name
+      ? currentUser.name
+      : "Guest User";
+
+    if (!reviewText) {
+      alert("Please write your review before submitting.");
+      return;
+    }
+
+    if (selectedServiceRating === 0) {
+      alert("Please select a star rating.");
+      return;
+    }
+
+    const reviews = getServiceReviews();
+
+    const newReview = {
+      id: Date.now(),
+      name: reviewerName,
+      text: reviewText,
+      rating: selectedServiceRating,
+      createdAt: new Date().toLocaleString()
+    };
+
+    reviews.push(newReview);
+    saveServiceReviews(reviews);
+
+    reviewTextElement.value = "";
+    selectedServiceRating = 0;
+    renderSelectedStars(0);
+    renderServiceReviews();
+
+    alert("Thank you for your review!");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof renderNavbarAuth === "function") {
+      renderNavbarAuth();
+    }
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+      star.addEventListener("click", function () {
+        selectedServiceRating = Number(this.dataset.value);
+        renderSelectedStars(selectedServiceRating);
+      });
+    });
+
+    renderServiceReviews();
+  });
+</script>
+</body>
+
+</html>
